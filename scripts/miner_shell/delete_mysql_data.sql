@@ -1,0 +1,17 @@
+SET SQL_SAFE_UPDATES = 0;
+delete from ppio.account;
+delete from ppio.chunk_tracker;
+delete from ppio.deposit_transaction;
+delete from ppio.download_contract;
+delete from ppio.miner_capacity;
+delete from ppio.miner_contract;
+delete from ppio.peer;
+delete from ppio.proof_lpoc;
+#delete from ppio.proof_porep;
+delete from ppio.proof_post;
+delete from ppio.proof_rep;
+delete from ppio.proof_pot;
+delete from ppio.storage_contract;
+#delete from ppio.transaction;
+delete from ppio.transfer_transaction;
+SET SQL_SAFE_UPDATES = 1;

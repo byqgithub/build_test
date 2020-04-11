@@ -1,0 +1,39 @@
+kind: ReplicationController
+metadata:
+  name: elk
+  labels:
+    app: elk
+spec:
+  replicas: 1
+  selector:
+    app: elk
+  template:
+    metadata:
+      labels:
+        app: elk
+  spec:
+    containers:
+      - name: kibana
+        image: kibana:6.4.2
+        ports:
+          - containerPort: 5601
+            protocol: TCP
+        env:
+          - name: "ELASTICSEARCH_URL"
+            value: "http://elasticsearch-service:9200"
+
+      - name: elasticsearch
+        image: elasticsearch:6.4.2
+        ports:
+          - containerPort: 9200
+        env:
+          - name: "discovery.type"
+            value: "single-node"
+
+      - name: logstash
+          image: logstash: latest
+          ports:
+          - containerPort: 9200
+          env:
+          - name: "discovery.type"
+            value: "single-node"

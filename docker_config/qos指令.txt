@@ -1,0 +1,36 @@
+docker network create qosnetwork
+docker run -d --name kibana --net qosnetwork -p 5601:5601 kibana:6.4.2
+docker run -d --name elasticsearch --net qosnetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:6.4.2
+docker run -it --rm --net qosnetwork -p 5000:5000/udp -v /home/config_file:/config-dir logstash -f /config-dir/logstash.conf
+
+logstash.conf配置文件中：hosts => ["http://elasticsearch:9200"]
+docker 需安装rsyslogd
+端口映射，需修改为udp
+
+docker run -it -v /home/nfs/qiyu_test:/home/workspace 192.168.50.206:5000/ubuntuforgolang:v1 /bin/bash
+
+
+qos配置：
+user/miner：
+     命令行: ./user0/ppio.config
+             ./miner0/miner.conf
+     集成测试： /tmp/root/testdir/user0/ppio.config
+                /tmp/root/testdir/miner0/miner.config
+
+verifier: /root/.verifier/verifier.conf
+indexer: $GOPATH/....PPIO/go_enfi/cmd/indexer/indexer.json
+
+overlay配置文件：主要为user和miner，其他节点没有
+
+单机测试环境启动指令
+docker network create testnetwork
+docker run -d --name kibana --net testnetwork -p 5601:5601 kibana:6.4.2
+docker run -d --name elasticsearch --net testnetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:6.4.2
+docker run -it --rm --net testnetwork -p 5000:5000/udp -v $(pwd)/config_file:/config-dir logstash -f /config-dir/logstash.conf
+
+docker run -it -v /home/go:/home/workspace 192.168.50.208:5000/ubuntuforjenkinsslave:v1 /bin/bash
+
+提交构建docker环境启动指令（需要连接到jenkins）
+docker run -it -p 2222:22 -p 2379:2379 -p 8080:8080 -v /home/workspace:/home/workspace 192.168.50.208:5000/ubuntuforjenkinsslave:v1 /bin/bash
+docker run -d -p 2222:22 -p 2379:2379 -p 8080:8080 -v /home/workspace:/home/workspace 192.168.50.208:5000/ubuntuforjenkinsslave:v1 /etc/init.d/ssh start -D
+docker run -d -p 2222:22 -p 2379:2379 -p 8080:8080 ppiosingleenv /etc/init.d/ssh start -D

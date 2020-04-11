@@ -1,2 +1,2 @@
-# build_test
-jenkins submit build test
+# test
+test scripts

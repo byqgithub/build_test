@@ -1,0 +1,17 @@
+FROM golang:latest
+
+COPY rocksdb.zip /home
+COPY dep-linux-amd64 /home
+COPY protoc-3.2.0-linux-x86_64 /home/protoc3
+RUN apt-get update && apt-get -y install sudo && apt-get -y install redis-server && apt-get -y install zip \
+    && apt-get -y install build-essential libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev \
+    && chmod +x /home/dep-linux-amd64 \
+    && ln -s dep-linux-amd64 dep \
+    && mv /home/protoc3/bin/* /usr/local/bin/ \
+    && mv /home/protoc3/include/* /usr/local/include/ \
+    && chmod 777 /usr/local/bin/protoc  \
+    && chmod 777 /usr/local/include/google \
+    && unzip /home/rocksdb.zip -d /home/rocksdb \
+    && cd /home/rocksdb/rocksdb \
+    && make shared_lib \
+    && make install-shared

@@ -1,0 +1,24 @@
+{
+  "mysql": {
+      "host": "172.172.0.11",
+      "port": 3306,
+      "user": "root",
+      "password": "168168",
+      "db": "ppio"
+  },
+  "rpc": {
+      "internal": 1,
+      "timeout": 5,
+      "headers": {
+          "Content-Type": "text/json"
+      }
+  },
+  "ppio_chain": [
+      {
+          "ip": "127.0.0.1",
+          "port": 8685,
+          "addr": "ppio1QkQ8MRDnX8ynbmniUopSkbhzpqXZ3XKjF"
+      }
+  ]
+}
+

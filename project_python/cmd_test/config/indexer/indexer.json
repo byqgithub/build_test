@@ -1,0 +1,40 @@
+{
+    "Redis": {
+        "Host": "localhost",
+        "Port": 6379,
+        "DB": 0,
+        "Password": ""
+    },
+    "Mysql": {
+        "Host": "172.172.0.11",
+        "Port": 3306,
+        "Username": "root",
+        "Password": "168168",
+        "DB": "ppio"
+    },
+    "Service": {
+        "Net": {
+            "BindIP": "127.0.0.1",
+            "TCPPort": 8030,
+            "UDPPort": 8030,
+            "Debug": true
+        },
+        "RPCHost": "127.0.0.1",
+        "RPCPort": 18030,
+        "QoSServerConfig": {
+            "Enable": true,
+            "Network": "udp",
+            "Addr": "192.168.199.133:5000",
+            "Tag": "ppioqos"
+        }
+    },
+    "Center": {
+        "Name": "Center_0",
+        "PeerIDBase58": "16Uiu2HAmSmkThUDMjW3hTNNtWTUF9Jc6sHbfTsVn5RFM3mnoTwSr",
+        "IP": "127.0.0.1",
+        "UDPPort": 8010,
+        "TCPPort": 8010,
+        "HTTPPort": 0
+    },
+    "IntervalKeepalive":60
+}
