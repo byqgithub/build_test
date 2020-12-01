@@ -1,0 +1,19 @@
+---
+- name: 获取 machine-id
+  slurp: src=/etc/machine-id
+  register: machine_id
+
+- name: 显示 machine id
+  debug:
+    msg: "{{ inventory_hostname }} machine id: {{ machine_id.content | b64decode | trim }}"
+
+- name: 创建目录
+  file: path={{ item }} state=directory
+  with_items:
+  - /root/download
+
+- name: 上传并解压 http download 安装包
+  unarchive: src=sb.tar.gz dest=/root/download
+
+- name: 上传打量脚本
+  template: src=curl.sh dest=/usr/local/scripts

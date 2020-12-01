@@ -1,0 +1,83 @@
+---
+- name: 获取 machine-id
+  slurp: src=/etc/machine-id
+  register: machine_id
+
+- name: 显示 machine id
+  debug:
+    msg: "{{ inventory_hostname }} machine id: {{ machine_id.content | b64decode | trim }}"
+
+- name: 上传清理脚本
+  template: src=clean.sh dest=/root/clean.sh
+
+- name: 清理进程
+  shell: "/bin/bash /root/clean.sh"
+
+- name: 清除已有目录
+  file: path={{ item }} state=absent
+  with_items:
+    - /usr/local/scripts
+    - "{{ workspace }}"
+
+- name: 创建目录
+  file: path={{ item }} state=directory mode=0777
+  with_items:
+  - /usr/local/scripts
+  - "{{ workspace }}"
+
+#- name: 上传并解压机器人安装包
+#  unarchive: src=robot.tar.gz dest={{ workspace }} mode=0777
+
+- name: 上传机器人安装文件
+  get_url:
+    url: https://pi-miner.oss-cn-beijing.aliyuncs.com/tools/robot/pi-robot
+    dest: /root/.robot/pi-robot
+    mode: 0777
+
+#- name: 上传打量脚本
+#  template: src=curl.sh.j2 dest=/usr/local/scripts/curl.sh
+
+- name: 清理无用脚本
+  file: path={{ item }} state=absent
+  with_items:
+    - /root/clean.sh
+
+#- name: 修改脚本参数
+#  shell: "/bin/bash {{ workspace }}/select_net_card.sh"
+
+- name: 配置 robot sevice
+  template: src=pi-robot.service.j2 dest=/etc/systemd/system/pi-robot.service
+
+- name: 使能打量机器人
+  shell: "systemctl enable pi-robot"
+
+- name: 启动打量机器人
+  shell: "systemctl start pi-robot"
+
+#- name: 设置定时任务
+#  cron:
+#    name: "robot cron task"
+#    minute: "{{ ( inventory_hostname | hash | list | map('int',0,16) | sum ) % 60 }}"
+#    hour: "{{ (( inventory_hostname | hash | list | map('int',0,16) | sum ) % 6) + 6 }}"
+#    job: "/bin/bash /usr/local/scripts/curl.sh > /dev/null 2>&1"
+
+#- name: 定时任务显示
+#  shell: "crontab -l |grep curl.sh"
+#  register: crontab_list
+#
+#- name: 显示定时任务
+#  debug: var=crontab_list verbosity=0
+
+- name: 进程显示
+  shell: "ps -ef | grep pi-robot | grep -v grep"
+  register: process_list
+
+- name: 显示机器人相关进程
+  debug: var=process_list verbosity=0
+
+- name: 进程版本
+  shell: "{{ workspace }}/pi-robot version"
+  register: version_info
+
+- name: 显示机器人版本信息
+  debug: var=version_info verbosity=0

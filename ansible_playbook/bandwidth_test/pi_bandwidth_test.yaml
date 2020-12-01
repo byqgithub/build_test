@@ -1,0 +1,12 @@
+---
+- hosts:
+    - servers
+
+  roles:
+    - servers_deploy
+
+- hosts:
+    - clients
+
+  roles:
+    - clients_deploy

@@ -1,0 +1,189 @@
+[pi_hosts]
+# gypxy03.pcdn.pw     ansible_ssh_port=59903  ansible_ssh_user=root ansible_ssh_pass=gbkzbs
+# gypxy03.pcdn.pw     ansible_ssh_port=59904  ansible_ssh_user=root ansible_ssh_pass=gbkzbs
+# 120.240.82.10                               ansible_ssh_user=root ansible_ssh_pass=gbkzbs
+# 182.85.87.170       ansible_ssh_port=22     ansible_ssh_user=root ansible_ssh_pass=gbkzbs
+# 39.65.138.215       ansible_ssh_port=22     ansible_ssh_user=root ansible_ssh_pass=gbkzbs
+# yuan1209.f3322.net  ansible_ssh_port=22     ansible_ssh_user=root ansible_ssh_pass=EBWtUCHGyZOh
+
+# 120.240.82.8        ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 123.148.193.46      ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# fjsmy03.95kiss.com  ansible_ssh_port=1022   ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# zbylkj02.f3322.net  ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# 183.136.127.253     ansible_ssh_port=2022   ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# fjsmy04.95kiss.com  ansible_ssh_port=1012   ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# 122.194.244.78      ansible_ssh_port=5522   ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# 122.194.244.78      ansible_ssh_port=6622   ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+# yuan1209.zicp.net   ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=EBWtUCHGyZOh
+# ding02.jios.org     ansible_ssh_port=89     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# pxy001.zz110.site   ansible_ssh_port=8023   ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# peng980.uicp.io     ansible_ssh_port=10527  ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# 125.122.170.206     ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+# pi.pcdn.red              ansible_ssh_port=2233     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# pi.pcdn.red              ansible_ssh_port=2222     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# fjsmpxy03-gy.f3322.net   ansible_ssh_port=1022     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# fjsmpxy04-gy.f3322.net   ansible_ssh_port=1022     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+
+# 116.149.162.116   ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 222.174.4.17      ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# 115.231.155.214   ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 60.174.135.157    ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs‘
+
+# 121.57.211.101          ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=
+# 121.57.211.46           ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=
+# 125.42.186.241          ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 123.129.146.167         ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 60.6.223.61             ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# sktx3.f3322.net         ansible_ssh_port=66     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# xuanwifi059.ticp.net    ansible_ssh_port=8122   ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# nbbtpxy01-gy.f3322.net  ansible_ssh_port=1022   ansible_ssh_user=root  ansible_ssh_pass=EBWtUCHGyZOh
+# liuyunxi03.f3322.net    ansible_ssh_port=8800   ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+# aaa.tlcdc.cn         ansible_ssh_port=5555    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 113.100.172.227      ansible_ssh_port=22      ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# 222.136.206.1        ansible_ssh_port=60022   ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 182.40.252.43        ansible_ssh_port=22      ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# yuan1212.f3322.net   ansible_ssh_port=22      ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+# 117.94.38.217    ansible_ssh_port=22      ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 36.248.182.20    ansible_ssh_port=22      ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 42.230.57.158    ansible_ssh_port=22      ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+# 182.114.154.249     ansible_ssh_port=60022      ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 49.69.213.244       ansible_ssh_port=22         ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# gd.glhy.net         ansible_ssh_port=814        ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+# pxy001.zz110.site   ansible_ssh_port=8022       ansible_ssh_user=root  ansible_ssh_pass=pplabs123
+
+;113.73.75.123       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;110.246.73.122      ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;222.139.41.115      ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;113.73.75.183       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;223.214.224.178     ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;182.47.8.114        ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;117.86.51.224       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;13810838876.zicp.vip   ansible_ssh_port=50001       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;101.16.5.81         ansible_ssh_port=50002       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+# 36.154.71.194       ansible_ssh_port=7822       ansible_ssh_user=dapai  ansible_ssh_pass=Dapai@2020
+# 27.215.56.19        ansible_ssh_port=9023       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 27.215.56.19       ansible_ssh_port=9024       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+# 101.16.5.81         ansible_ssh_port=50000       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+;36.154.71.194           ansible_ssh_port=7822     ansible_ssh_user=dapai  ansible_ssh_pass=Dapai@2020 ansible_become_pass=EBWtUCHGyZOh
+;gd126.f3322.net         ansible_ssh_port=23       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;110.52.8.13             ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;139.227.12.182          ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;nbbtpxy01-gy.f3322.net  ansible_ssh_port=1022     ansible_ssh_user=root  ansible_ssh_pass=EBWtUCHGyZOh
+;222.214.201.126         ansible_ssh_port=2222     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;125.108.250.240         ansible_ssh_port=60021    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;112.85.130.66           ansible_ssh_port=7822    ansible_ssh_user=dapai  ansible_ssh_pass=Dapai@2020 ansible_become_pass=EBWtUCHGyZOh
+
+;153.37.113.21           ansible_ssh_port=60032       ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;120.240.82.11           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;120.240.82.12           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;120.240.82.13           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;120.240.82.14           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;xy001.f3322.net         ansible_ssh_port=26       ansible_ssh_user=root  ansible_ssh_pass=ppio123
+
+;182.123.50.176           ansible_ssh_port=22         ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=2080000000
+;221.237.104.21           ansible_ssh_port=22         ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=400000000
+;114.100.143.248          ansible_ssh_port=22         ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.96.34.52             ansible_ssh_port=22         ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;223.241.134.123          ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.102.81.41            ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.96.40.124            ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.102.87.105           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.102.85.61            ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.102.88.127           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;114.102.81.77            ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+
+;112.123.31.212           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=2000000000
+;xy127.f3322.net          ansible_ssh_port=25       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=900000000
+;106.87.84.174            ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=200000000
+;
+;144.52.16.210            ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=2100000000
+;
+;Xp6022.pcdn.red          ansible_ssh_port=6022     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs  cap_value=500000000
+;153.99.98.147            ansible_ssh_port=4422     ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=2000000000
+;171.80.250.53            ansible_ssh_port=60001    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1000000000
+;120.33.247.224           ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=400000000
+;101.xiaojin.cool         ansible_ssh_port=16001    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=500000000
+;qiu2.ipfspub.net         ansible_ssh_port=63051    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1000000000
+;
+;yuan1212.f3322.net         ansible_ssh_port=22    ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=650000000
+;117.87.81.53         ansible_ssh_port=60006    ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=300000000
+;
+;31tj552129.qicp.vip         ansible_ssh_port=51602    ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=500000000
+
+;117.174.4.106       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=3120000000
+;pi.pcdn.red         ansible_ssh_port=2244     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1760000000
+;117.86.51.224       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1200000000
+;222.214.201.126     ansible_ssh_port=2222     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=2600000000
+;125.108.227.128     ansible_ssh_port=60021    ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=3000000000
+;221.237.104.10      ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=600000000
+;114.105.150.26      ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=200000000
+;114.102.76.74     ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=200000000
+;114.102.74.48       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=200000000
+;yuan1209.zicp.net    ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=300000000
+;gd127.f3322.net      ansible_ssh_port=23       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1200000000
+;gd130.f3322.net      ansible_ssh_port=24       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=900000000
+;183.215.212.22       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=600000000
+;31tj552129.qicp.vip  ansible_ssh_port=51602    ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=500000000
+;36.32.81.182         ansible_ssh_port=2054     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1300000000
+
+;pi.pcdn.red         ansible_ssh_port=2233     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1760000000
+;36.32.81.182         ansible_ssh_port=2055     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1300000000
+;31tj552129.qicp.vip  ansible_ssh_port=12819    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=600000000
+
+;112.122.168.73  ansible_ssh_port=22    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1200000000
+;fjsmy04.95kiss.com   ansible_ssh_port=1012     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1200000000
+;317t8302e1.wicp.vip  ansible_ssh_port=31692    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs    cap_value=500000000
+# 317t8302e1.wicp.vip  ansible_ssh_port=41738    ansible_ssh_user=root  ansible_ssh_pass=ppio123    cap_value=500000000
+
+;peng980.uicp.io   ansible_ssh_port=21447     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1200000000
+;
+;106.87.51.189   ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs  cap_value=300000000
+;42.233.40.162   ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs  cap_value=810000000
+;42.233.41.166   ansible_ssh_port=60003     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs  cap_value=1350000000
+;
+;Xp6022.pcdn.red          ansible_ssh_port=6022     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs  cap_value=500000000
+;qiu2.ipfspub.net         ansible_ssh_port=63051    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1300000000
+;117.174.4.106       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=3120000000
+;pi.pcdn.red         ansible_ssh_port=2244     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1760000000
+;117.86.51.224       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1200000000
+;222.214.201.126     ansible_ssh_port=2222     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=2600000000
+;221.237.104.10      ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=600000000
+;114.102.70.156      ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=200000000
+;114.105.150.118     ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=200000000
+;gd127.f3322.net      ansible_ssh_port=23       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=1200000000
+;183.215.212.22       ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=600000000
+;31tj552129.qicp.vip  ansible_ssh_port=51602    ansible_ssh_user=root  ansible_ssh_pass=ppio123  cap_value=500000000
+
+
+#pi.pcdn.red         ansible_ssh_port=2233     ansible_ssh_user=root  ansible_ssh_pass=ppio123   cap_value=1760000000
+#gd130.f3322.net      ansible_ssh_port=24       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=900000000
+#31tj552129.qicp.vip  ansible_ssh_port=12819    ansible_ssh_user=root  ansible_ssh_pass=gbkzbs   cap_value=600000000
+
+;120.240.82.14          ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;110.246.70.37         ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;110.246.90.88           ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;
+;fjsmy03.95kiss.com     ansible_ssh_port=1022   ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;zbylkj02.f3322.net     ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;221.194.209.112            ansible_ssh_port=50000  ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;110.246.26.86   ansible_ssh_port=22   ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;114.102.85.155          ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;114.102.87.17         ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;122.191.116.38        ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;112.123.31.212        ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+;gd.glhy.net           ansible_ssh_port=813    ansible_ssh_user=root  ansible_ssh_pass=ppio123
+122.191.116.38        ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;113.73.75.123         ansible_ssh_port=22     ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;31tj552129.qicp.vip   ansible_ssh_port=12819  ansible_ssh_user=root  ansible_ssh_pass=ppio123
+;317t8302e1.wicp.vip   ansible_ssh_port=41738  ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+317t8302e1.wicp.vip   ansible_ssh_port=31692  ansible_ssh_user=root  ansible_ssh_pass=ppio123
+
+[pi_hosts:vars]
+workspace=/root/.robot/

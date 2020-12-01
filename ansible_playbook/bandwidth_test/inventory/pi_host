@@ -1,0 +1,8 @@
+[servers]
+110.52.8.13             ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+
+[clients]
+110.52.8.13             ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+110.52.8.13             ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+110.52.8.13             ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs
+110.52.8.13             ansible_ssh_port=22       ansible_ssh_user=root  ansible_ssh_pass=gbkzbs

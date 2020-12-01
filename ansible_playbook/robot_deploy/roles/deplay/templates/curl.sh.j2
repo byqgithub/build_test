@@ -1,0 +1,17 @@
+#!/bin/bash
+
+count0=`ps -aux | grep pi-robot | grep -v grep | wc -l`
+if [ ${count0} -ne 1 ]
+then
+    /root/.robot/kill.sh
+    /root/.robot/start.sh
+fi
+
+count1=`ps -aux | grep robot_flow | grep -v grep | wc -l`
+if [ ${count1} -lt 1 ]
+then
+    nohup /bin/bash /root/.robot/robot_flow.sh > /root/.robot/start_monitor.log 2>&1 &
+fi
+
+sleep 10
+/usr/bin/curl http://127.0.0.1:8888/percent/100000/percent_expire/5400/cap/{{ cap_value }}

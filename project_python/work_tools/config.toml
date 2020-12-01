@@ -1,0 +1,261 @@
+[65baad06e563445b9077c6449c17fddd]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "12:9"
+ expect_bandwidth = 450000000
+ duration = 5400
+ work_interface = "^wan.*"
+ detect_interface = ["ens192"]
+
+ [a1f28bb2339b4a6097ea5e837026168b]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "6:34"
+ expect_bandwidth = 450000000
+ duration = 5400
+ work_interface = "^wan.*"
+ detect_interface = ["ens192"]
+
+ [3798e8fab3cb43e49152b90dfe08c229]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "7:42"
+ expect_bandwidth = 450000000
+ duration = 5400
+ work_interface = "^wan.*"
+ detect_interface = ["ens192"]
+
+[426560bea5aa49f5bf7353d97268890d]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "10:32"
+ expect_bandwidth = 600000000
+ duration = 5400
+ work_interface = "enp131s0f0"
+ detect_interface = ["enp131s0f0"]
+
+ [9086488090414d69bf57732ccb1e6bed]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "11:36"
+ expect_bandwidth = 1500000000
+ duration = 5400
+ work_interface = "p2p1"
+ detect_interface = ["p2p1"]
+
+ [02fcc68e8ef4444490665f23d1b9b42d]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "14:20"
+ expect_bandwidth = 2200000000
+ duration = 5400
+ work_interface = "^enp5s0.*"
+ detect_interface = ["enp5s0"]
+
+ [478fd690e87e4a74ad308ac7b717501c]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "6:43"
+ expect_bandwidth = 750000000
+ duration = 5400
+ work_interface = "ens192"
+ detect_interface = ["ens192"]
+
+[ee616ffc38e84c65b584719b13af0bc5]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "6:15"
+ expect_bandwidth = 800000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["enp129s0"]
+
+[9e34b29f05bd4d40a231b3b5a1ba33c2]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "11:20"
+ expect_bandwidth = 300000000
+ duration = 5400
+ work_interface = "p4p1"
+ detect_interface = ["p4p1"]
+[33c56b5e57514a179e64ff5585cd3ed6]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "12:05"
+ expect_bandwidth = 2000000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["p4p1"]
+[40599b58743540fb9174e21d80ddee7b]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "7:37"
+ expect_bandwidth = 1200000000
+ duration = 5400
+ work_interface = "^wan.*"
+ detect_interface = ["p4p1"]
+
+ [5023bedcee7c4cb38c2d59a7a65a831c]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "7:15"
+ expect_bandwidth = 1000000000
+ duration = 5400
+ work_interface = "enp129s0f0"
+ detect_interface = ["enp129s0f0"]
+[419328a8b70e47fa80acc3f90030f8d0]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "11:57"
+ expect_bandwidth = 1490000000
+ duration = 5400
+ work_interface = "^wan.*"
+ detect_interface = ["p5p1"]
+[b612e662fd0b44f9897538ba00a03d40]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "8:42"
+ expect_bandwidth = 1080000000
+ duration = 5400
+ work_interface = "^wan.*"
+ detect_interface = ["p5p1"]
+[00042bda639c4f4686f9cd4a63ae5d22]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "8:36"
+ expect_bandwidth = 550000000
+ duration = 5400
+ work_interface = "eno3"
+ detect_interface = ["eno3"]
+[3e8eec1e394a4c53a7eba5f2ca99379e]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "10:20"
+ expect_bandwidth = 450000000
+ duration = 5400
+ work_interface = "enp130s0f0"
+ detect_interface = ["enp130s0f0"]
+[a20fb52264af4b99af3837a35f135cf1]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "7:22"
+ expect_bandwidth = 800000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["ens6"]
+[1a4d73eb6bbc483e931bbd93373d0d51]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "6:28"
+ expect_bandwidth = 800000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["p4p2"]
+[66b25787a5714bb2a20f0a64c8a95cad]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "8:19"
+ expect_bandwidth = 800000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["p4p2"]
+[badeae36b54e4d7dbae3f1a75d513d8f]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "8:2"
+ expect_bandwidth = 1200000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["enp129s0f1"]
+[365e9ededf664703b55f982099acf736]
+ machines = [
+ "d2f09d14cb6240b7bfb0d59f322090df",
+ "ee616ffc38e84c65b584719b13af0bc5",
+ "9f50025d04054c53abf859a7dccfb177",
+ "e4d57d0b5ad54d85abe5e9adc78a5fe7"
+ ]
+ daily_begin = "7:2"
+ expect_bandwidth = 2000000000
+ duration = 5400
+ work_interface = "^ppp.*"
+ detect_interface = ["ens3"]

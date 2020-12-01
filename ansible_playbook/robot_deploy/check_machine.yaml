@@ -1,0 +1,12 @@
+---
+- hosts:
+    - pi_hosts
+
+  tasks:
+    - name: 获取 machine-id
+      slurp: src=/etc/machine-id
+      register: machine_id
+
+    - name: 显示 machine id
+      debug:
+        msg: "{{ inventory_hostname }} machine id: {{ machine_id.content | b64decode | trim }}"

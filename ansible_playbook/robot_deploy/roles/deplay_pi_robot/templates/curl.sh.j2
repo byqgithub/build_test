@@ -1,0 +1,17 @@
+#!/bin/bash
+
+count0=`ps -aux | grep pi-robot | grep -v grep | wc -l`
+if [ ${count0} -ne 1 ]
+then
+    {{ workspace }}/clean.sh
+    {{ workspace }}/start.sh
+fi
+
+count1=`ps -aux | grep robot_flow | grep -v grep | wc -l`
+if [ ${count1} -lt 1 ]
+then
+    {{ workspace }}/flow.sh
+fi
+
+sleep 10
+/usr/bin/curl http://127.0.0.1:18889/flow/{{ cap_value }}/expire/5400?proto=tcp

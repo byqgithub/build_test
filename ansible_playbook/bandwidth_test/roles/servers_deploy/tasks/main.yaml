@@ -1,0 +1,38 @@
+---
+- name: 获取 machine-id
+  slurp: src=/etc/machine-id
+  register: machine_id
+
+- name: 显示 machine id
+  debug:
+    msg: "{{ inventory_hostname }} machine id: {{ machine_id.content | b64decode | trim }}"
+
+- name: 创建目录
+  file: path={{ item }} state=directory
+  with_items:
+  - /root/nginx
+
+- name: 上传并解压 nginx 安装包
+  unarchive: src=nginx-1.6.2-v2.tar.gz dest=/root/nginx
+
+- name: 配置 DNS
+  shell: "echo 'nameserver 114.114.114.114' > /etc/resolv.conf"
+
+- name: 安装依赖
+  yum:
+    name:
+      - wget
+      - pcre*
+      - gcc*
+      - zlib-devel
+    state: present
+  when: 'ansible_distribution in ["CentOS","RedHat"]'
+
+- name: 源码安装 nginx
+  shell: "cd /root/nginx && ./configure && make && make install"
+
+- name: 创建拉流文件
+  shell: "mkdir -p /usr/local/nginx/html;dd bs=5G count=1 if=/dev/zero of=/usr/local/nginx/html/test.zip oflag=dsync"
+
+- name: 启动 nginx
+  shell: "/usr/local/nginx/sbin/nginx"
