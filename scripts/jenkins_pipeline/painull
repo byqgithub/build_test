@@ -1,0 +1,246 @@
+pipeline {
+    agent {
+        node {
+            label 'master'
+            customWorkspace '/home/pplabs/code'
+        }
+    }
+
+    environment {
+        gitlab_url="http://git.paigod.work/ppio/pi-miner.git"
+        branch="${env.git_branch}"
+        version="${env.version}"
+        gitlab_credentials_id="e4894b5e-29b8-4860-9273-9cfd3f3411a1"
+        remote_ssh_credentials_id="8555cab5-3dd2-4b4a-9907-5232a43c73d5"
+        code_path="PPIO/pi-miner/tools/painull/"
+        artifact_path="artifact/"
+        bin_path="artifact/painull/"
+    }
+
+    stages {
+        // stage('git pull') {
+        //     options {
+        //         timeout(time: 10, unit: 'MINUTES')
+        //     }
+        //     steps {
+        //         echo "git pull source code url: ${gitlab_url}; branch: ${branch}"
+        //         dir("PPIO/pi-miner") {
+        //             git(credentialsId: "${gitlab_credentials_id}", url: "${gitlab_url}", branch: "${branch}")
+        //         }
+        //     }
+        // }
+        stage('git pull branch') {
+            when { expression { "${git_tag}" == "" } }
+            options {
+                timeout(time: 10, unit: 'MINUTES')
+            }
+            steps {
+                echo "git pull source code url: ${gitlab_url}; branch: ${branch}"
+                dir("PPIO/pi-miner") {
+                    git(credentialsId: "${gitlab_credentials_id}", url: "${gitlab_url}", branch: "${branch}")
+                }
+            }
+        }
+        stage('git pull tag') {
+            when { expression { "${git_tag}" != "" } }
+            options {
+                timeout(time: 10, unit: 'MINUTES')
+            }
+            steps {
+                echo "git pull source code url: ${gitlab_url}; branch: ${branch}; tag: ${git_tag}"
+                dir("PPIO/pi-miner") {
+                checkout([$class: 'GitSCM',
+                          userRemoteConfigs: [[url: "${gitlab_url}", credentialsId: "${gitlab_credentials_id}"]],
+                          branches: [[name: "${git_tag}"]],
+                          doGenerateSubmoduleConfigurations: false,
+                          extensions: [[$class: 'LocalBranch', localBranch: "**"]],
+                          gitTool: 'Default',
+                          submoduleCfg: []
+                        ])
+                }
+            }
+        }
+        stage('make') {
+            options {
+                timeout(time: 10, unit: 'MINUTES')
+            }
+            steps {
+                echo 'make painull binary file'
+                dir("${code_path}") {
+                    sh "pwd && source /etc/profile && go build -o painull_${version} && sudo chmod 777 painull_${version}"
+                }
+                dir("${bin_path}") {
+                    sh "cp -f ${env.WORKSPACE}/${code_path}/painull_${version} painull"
+                    sh '''echo $(md5sum painull) > painull.md5'''
+                }
+            }
+        }
+        stage('put object') {
+            steps {
+                dir("${artifact_path}") {
+                    sh "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/oss_tool/aliyun_oss.py -O aliyun_oss.py"
+                    sh "python3 aliyun_oss.py ${version} ${env.WORKSPACE}/${bin_path}/painull"
+                    sh "python3 aliyun_oss.py ${version} ${env.WORKSPACE}/${bin_path}/painull.md5"
+                }
+            }
+        }
+        stage('gray release') {
+            when { expression { "${machineId}" != "all" } }
+            steps {
+                echo "gray release ${version}"
+                dir("${artifact_path}") {
+                    sh "echo '${machineId}' > machineId.txt"
+                    sh "scp machineId.txt pplabs@172.16.123.144:/home/pplabs"
+                }
+                script {
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "pwd && hostname"'''
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/modify_salt/modify_salt.sh -O modify_salt.sh"'''
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "sudo bash modify_salt.sh painull ${version} machineId.txt"'''
+                }
+            }
+        }
+        stage('full release') {
+            when { expression { "${machineId}" == "all" } }
+            steps {
+                echo "full release ${version}"
+                script {
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "pwd && hostname"'''
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/modify_salt/modify_salt.sh -O modify_salt.sh"'''
+                    // sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "sudo bash modify_salt.sh painull ${version}"'''
+                }
+            }
+        }
+    }
+}
+
+
+
+pipeline {
+    agent {
+        node {
+            label 'master'
+            customWorkspace '/home/pplabs/code'
+        }
+    }
+
+    environment {
+        gitlab_url="http://git.paigod.work/ppio/pi-miner.git"
+        branch="${env.git_branch}"
+        version="${env.version}"
+        gitlab_credentials_id="e4894b5e-29b8-4860-9273-9cfd3f3411a1"
+        remote_ssh_credentials_id="8555cab5-3dd2-4b4a-9907-5232a43c73d5"
+        code_path="PPIO/pi-miner/tools/painull/tool/"
+        artifact_path="artifact/"
+        bin_path="artifact/painull_tool/"
+    }
+
+    stages {
+        // stage('git pull') {
+        //     options {
+        //         timeout(time: 10, unit: 'MINUTES')
+        //     }
+        //     steps {
+        //         echo "git pull source code url: ${gitlab_url}; branch: ${branch}"
+        //         dir("PPIO/pi-miner") {
+        //             git(credentialsId: "${gitlab_credentials_id}", url: "${gitlab_url}", branch: "${branch}")
+        //         }
+        //     }
+        // }
+        stage('git pull branch') {
+            when { expression { "${git_tag}" == "" } }
+            options {
+                timeout(time: 10, unit: 'MINUTES')
+            }
+            steps {
+                echo "git pull source code url: ${gitlab_url}; branch: ${branch}"
+                dir("PPIO/pi-miner") {
+                    git(credentialsId: "${gitlab_credentials_id}", url: "${gitlab_url}", branch: "${branch}")
+                }
+            }
+        }
+        stage('git pull tag') {
+            when { expression { "${git_tag}" != "" } }
+            options {
+                timeout(time: 10, unit: 'MINUTES')
+            }
+            steps {
+                echo "git pull source code url: ${gitlab_url}; branch: ${branch}; tag: ${git_tag}"
+                dir("PPIO/pi-miner") {
+                checkout([$class: 'GitSCM',
+                          userRemoteConfigs: [[url: "${gitlab_url}", credentialsId: "${gitlab_credentials_id}"]],
+                          branches: [[name: "${git_tag}"]],
+                          doGenerateSubmoduleConfigurations: false,
+                          extensions: [[$class: 'LocalBranch', localBranch: "**"]],
+                          gitTool: 'Default',
+                          submoduleCfg: []
+                        ])
+                }
+            }
+        }
+        stage('tar') {
+            options {
+                timeout(time: 10, unit: 'MINUTES')
+            }
+            steps {
+                echo 'tar painull_tool package as painull_tool.tar.gz'
+                dir("${code_path}") {
+                    sh "sudo chmod 777 *.py *.sh && tar -czf painull_tool_${version}.tar.gz *.py *.sh"
+                }
+                dir("${bin_path}") {
+                    sh "cp -f ${env.WORKSPACE}/${code_path}/painull_tool_${version}.tar.gz painull_tool.tar.gz"
+                    sh '''echo $(md5sum painull_tool.tar.gz) > painull_tool.md5'''
+                }
+            }
+        }
+        stage('put object') {
+            steps {
+                dir("${artifact_path}") {
+                    sh "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/oss_tool/aliyun_oss.py -O aliyun_oss.py"
+                    sh "python3 aliyun_oss.py ${version} ${env.WORKSPACE}/${bin_path}/painull_tool.tar.gz"
+                    sh "python3 aliyun_oss.py ${version} ${env.WORKSPACE}/${bin_path}/painull_tool.md5"
+                }
+            }
+        }
+        // stage('modify salt') {
+        //     steps {
+        //         dir("${artifact_path}") {
+        //             sh "echo '${env.machineId}' > machineId.txt"
+        //             sh "scp machineId.txt pplabs@172.16.123.144:/home/pplabs"
+        //         }
+        //         script {
+        //             sshagent(["${remote_ssh_credentials_id}"]) {
+        //                 sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "pwd && hostname"'''
+        //                 sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/modify_salt/modify_salt.sh -O modify_salt.sh"'''
+        //                 sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "sudo bash modify_salt.sh painull_tool ${version} machineId.txt"'''
+        //             }
+        //         }
+        //     }
+        // }
+        stage('gray release') {
+            when { expression { "${machineId}" != "all" } }
+            steps {
+                echo "gray release ${version}"
+                dir("${artifact_path}") {
+                    sh "echo '${machineId}' > machineId.txt"
+                    sh "scp machineId.txt pplabs@172.16.123.144:/home/pplabs"
+                }
+                script {
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "pwd && hostname"'''
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/modify_salt/modify_salt.sh -O modify_salt.sh"'''
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "sudo bash modify_salt.sh painull ${version} machineId.txt"'''
+                }
+            }
+        }
+        stage('full release') {
+            when { expression { "${machineId}" == "all" } }
+            steps {
+                echo "full release ${version}"
+                script {
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "pwd && hostname"'''
+                    sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "wget http://pi-miner.oss-cn-beijing.aliyuncs.com/devops/modify_salt/modify_salt.sh -O modify_salt.sh"'''
+                    // sh '''ssh -o StrictHostKeyChecking=no -T pplabs@172.16.123.144 "sudo bash modify_salt.sh painull ${version}"'''
+                }
+            }
+        }
+    }
+}

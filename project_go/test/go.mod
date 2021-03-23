@@ -20,6 +20,6 @@ require (
 	golang.org/x/lint v0.0.0-20200302205851-738671d3881b // indirect
 	golang.org/x/mod v0.3.0 // indirect
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344 // indirect
-	golang.org/x/tools v0.0.0-20200701221012-f01a4bec33ec // indirect
+	golang.org/x/tools v0.0.0-20200701221012-f01a4bec33ec
 	sourcegraph.com/sqs/goreturns v0.0.0-20181028201513-538ac6014518 // indirect
 )
