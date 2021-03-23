@@ -4,8 +4,8 @@ import os
 import sys
 import oss2
 
-access_key_id = "LTAI4FeqFQbGtYGE8y5zKRTd"
-access_key_secret = "bppeANlEGVZCl1fJblOp7iyfDC93YC"
+access_key_id = ""
+access_key_secret = ""
 bucket_name = "pi-miner"
 painull_path = "tools/painull/v%s"
 
